@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeSave Pro - Professional Training Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* Header Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .logo-text span {
+            color: #e74c3c;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #e74c3c;
+        }
+        
+        .nav-btn {
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+        }
+        
+        .nav-btn:hover {
+            background-color: #c0392b;
+            color: white;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.5), rgba(44, 62, 80, 0.5)), url('https://samplingamerica.com/wp-content/uploads/2023/09/Learning-First-Aid.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            height: 700px;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-card h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+        }
+        
+        .service-card ul {
+            list-style-type: none;
+            margin: 20px 0;
+        }
+        
+        .service-card li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .service-card li:before {
+            content: "•";
+            color: #e74c3c;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Why Choose Us Section */
+        .why-choose {
+            background-color: #f8f9fa;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: #e74c3c;
+            margin-bottom: 20px;
+            background-color: #fef2f1;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            text-align: center;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial:before {
+            content: "";
+            font-size: 5rem;
+            color: #e74c3c;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-content {
+            flex: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .testimonial-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 3px solid #e74c3c;
+        }
+        
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .testimonial-role {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: #f1c40f;
+            margin-bottom: 15px;
+        }
+        
+        /* References Section */
+        .references {
+            background-color: #f8f9fa;
+        }
+        
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .reference-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .reference-item h3 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(44, 62, 80, 0.5), rgba(44, 62, 80, 0.5)), url('https://img.freepik.com/premium-photo/cpr-training_798657-7076.jpg?w=2000') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+            height: 500px;
+        }
+        
+        .cta h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        /* Contact Form */
+        .contact {
+            background-color: #f8f9fa;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .full-width {
+            grid-column: 1 / span 2;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-info h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .footer-logo-text span {
+            color: #e74c3c;
+        }
+        
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links ul {
+            list-style-type: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #e74c3c;
+        }
+        
+        .contact-info {
+            list-style-type: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: #e74c3c;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #e74c3c;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .full-width {
+                grid-column: 1;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-author {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .testimonial-image {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNlNzRjM2MiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMyA5bDMuODQgMi4zM2EyIDIgMCAwMDMgMDBMMTUgOW0zIDNsMy44NC0yLjMzYTIgMiAwIDAxMyAwTDIxIDltLTUtNWwtMy44NCAyLjMzYTIgMiAwIDAxLTMgMEw4IDRNMyAzdjE4YTIgMiAwIDAwMiAyaDE0YTIgMiAwIDAwMi0yVjMiPjwvcGF0aD48L3N2Zz4=" alt="LifeSave Pro Logo">
+                <div class="logo-text">Life<span>Save</span> Pro</div>
+            </div>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#references">References</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="nav-btn">Book Training</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Save Lives with Professional Training</h1>
+            <p>Expert CPR, First Aid, and Fire Safety Training for individuals and organizations. Get certified and be prepared for any emergency.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn">Book Training Now</a>
+                <a href="#contact" class="btn">View Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-text">People Trained</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-text">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-text">Companies Served</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-text">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About LifeSave Pro</h2>
+                <p>Your trusted partner in emergency response training</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>At LifeSave Pro, our mission is to empower individuals and organizations with the knowledge and skills needed to respond effectively in emergency situations. We believe that proper training can make the difference between life and death.</p>
+                    
+                    <h3>Our Story</h3>
+                    <p>Founded in 2013 by emergency response professionals, LifeSave Pro has grown from a small training center to a nationally recognized provider of safety training programs. Our team of certified instructors brings real-world experience to every training session.</p>
+                    
+                    <h3>Our Approach</h3>
+                    <p>We combine theoretical knowledge with hands-on practical exercises to ensure our students are fully prepared. Our training programs are regularly updated to reflect the latest guidelines and best practices in emergency response.</p>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://s7d2.scene7.com/is/image/TWCNews/CERTClass_STL_082123" alt="LifeSave Pro Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Training Services</h2>
+                <p>Professional, certified training programs designed to save lives and ensure workplace safety compliance.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://static.wixstatic.com/media/5d86e5_ed1630e694094692a8e7936917b13ab6~mv2.jpeg/v1/fit/w_2500,h_1330,al_c/5d86e5_ed1630e694094692a8e7936917b13ab6~mv2.jpeg" alt="CPR Training">
+                    </div>
+                    <div class="service-content">
+                        <h3>CPR Training</h3>
+                        <p>Learn life-saving CPR techniques with hands-on practice and certification from certified instructors.</p>
+                        <ul>
+                            <li>Adult & Child CPR</li>
+                            <li>AED Training</li>
+                            <li>Choking Response</li>
+                            <li>Certification Included</li>
+                        </ul>
+                        <a href="#contact" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://www.parksvillequalicumfoundation.com/wp-content/uploads/2021/09/Social-first-aid-CERO.jpg" alt="First Aid Training">
+                    </div>
+                    <div class="service-content">
+                        <h3>First Aid Training</h3>
+                        <p>Comprehensive first aid training covering wound care, emergency response, and medical emergencies.</p>
+                        <ul>
+                            <li>Wound Care</li>
+                            <li>Medical Emergencies</li>
+                            <li>Injury Assessment</li>
+                            <li>Emergency Response</li>
+                        </ul>
+                        <a href="#contact" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://www.alertmedia.com/wp-content/uploads/2022/09/Blog-FireSafety-Training-v1.jpg" alt="Fire Safety Training">
+                    </div>
+                    <div class="service-content">
+                        <h3>Fire Safety Training</h3>
+                        <p>Professional fire safety training, including prevention, evacuation procedures, and equipment usage.</p>
+                        <ul>
+                            <li>Fire Prevention</li>
+                            <li>Evacuation Procedures</li>
+                            <li>Extinguisher Training</li>
+                            <li>Safety Protocols</li>
+                        </ul>
+                        <a href="#contact" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose LifeSave Pro?</h2>
+                <p>We stand out from the competition with our exceptional training programs and experienced instructors</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Certified Instructors</h3>
+                    <p>All our instructors are certified professionals with years of real-world emergency response experience.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Flexible Scheduling</h3>
+                    <p>We work around your schedule with on-site training, weekend sessions, and custom timing options.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Ongoing Support</h3>
+                    <p>Free refresher sessions, updated materials, and 24/7 support for all our certified participants.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Nationally Recognized Certification</h3>
+                    <p>Our certifications are recognized nationwide and meet all industry standards and requirements.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Hands-On Training</h3>
+                    <p>We prioritize practical, hands-on experience to ensure you're truly prepared for emergencies.</p>
+                </div>
+                
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h3>Group Discounts</h3>
+                    <p>Special pricing for groups and organizations, making quality training accessible to everyone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Hear from organizations and individuals who have experienced our training firsthand</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"The CPR training was excellent! Our entire team feels more confident now. The instructor was knowledgeable and made the session engaging."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-image">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Sarah Johnson</div>
+                            <div class="testimonial-role">HR Manager, TechCorp</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Outstanding fire safety training! The hands-on approach and real-world scenarios prepared our team for any emergency situations."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-image">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Michael Chen</div>
+                            <div class="testimonial-role">Safety Director, Construction Plan</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Perfect first aid training for our school staff. Clear instructions, practical skills, and great follow-up materials. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-image">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Lisa Rodriguez">
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Lisa Rodriguez</div>
+                            <div class="testimonial-role">School Principal, Lincoln Elementary</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"We've used LifeSave Pro for three years running. Their on-site training has helped us maintain perfect safety compliance records."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-image">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Robert Williams">
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Robert Williams</div>
+                            <div class="testimonial-role">Operations Manager, Manufacturing Co.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"The instructor's real-world experience made all the difference. They shared practical examples that made the training stick with our team."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-image">
+                            <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Jennifer Kim">
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Jennifer Kim</div>
+                            <div class="testimonial-role">Director, Senior Care Facility</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"I never thought CPR training could be so engaging. The hands-on practice with mannequins and AED trainers built my confidence tremendously."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-image">
+                            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="David Miller">
+                        </div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">David Miller</div>
+                            <div class="testimonial-role">Individual Participant</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section id="references" class="references">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our References</h2>
+                <p>Industry recognition and certifications that validate our expertise</p>
+            </div>
+            
+            <div class="references-grid">
+                <div class="reference-item">
+                    <h3>American Heart Association</h3>
+                    <p>Authorized Training Center for CPR and Emergency Cardiovascular Care</p>
+                </div>
+                
+                <div class="reference-item">
+                    <h3>American Red Cross</h3>
+                    <p>Licensed Training Provider for First Aid, CPR, and AED programs</p>
+                </div>
+                
+                <div class="reference-item">
+                    <h3>OSHA</h3>
+                    <p>Compliant safety training programs that meet workplace requirements</p>
+                </div>
+                
+                <div class="reference-item">
+                    <h3>National Safety Council</h3>
+                    <p>Recognized provider of safety training and certification programs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Don't wait for an emergency. Get your team trained and certified today with our professional training programs.</p>
+            <a href="#contact" class="btn">Book Your Training Now</a>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get Your Free Consultation</h2>
+                <p>Fill out the form below and we'll get back to you within 24 hours</p>
+            </div>
+            
+            <form>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullname">Full Name *</label>
+                        <input type="text" id="fullname" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Enter your phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company/Organization</label>
+                        <input type="text" id="company" placeholder="Enter company name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="training-type">Training Type *</label>
+                        <select id="training-type" required>
+                            <option value="">Select training type</option>
+                            <option value="cpr">CPR Training</option>
+                            <option value="firstaid">First Aid Training</option>
+                            <option value="fire">Fire Safety Training</option>
+                            <option value="combo">Combination Package</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="participants">Number of Participants</label>
+                        <input type="number" id="participants" placeholder="How many people need training?">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="details">Additional Details</label>
+                        <textarea id="details" placeholder="Tell us more about your training needs..."></textarea>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNlNzRjM2MiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMyA5bDMuODQgMi4zM2EyIDIgMCAwMDMgMDBMMTUgOW0zIDNsMy44NC0yLjMzYTIgMiAwIDAxMyAwTDIxIDltLTUtNWwtMy44NCAyLjMzYTIgMiAwIDAxLTMgMEw4IDRNMyAzdjE4YTIgMiAwIDAwMiAyaDE0YTIgMiAwIDAwMi0yVjMiPjwvcGF0aD48L3N2Zz4=" alt="LifeSave Pro Logo">
+                        <div class="footer-logo-text">Life<span>Save</span> Pro</div>
+                    </div>
+                    <p>Professional CPR, first aid, and fire safety training services. Certified instructors with years of experience helping individuals and organizations stay prepared for emergencies.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#references">References</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> 1 (953) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@lifesavepro.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Training Center St, City, State 12345</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 LifeSave Pro. All rights reserved. Developed by Mohibul.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>
